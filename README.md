@@ -22,6 +22,13 @@
 ## Запуск локально
 
 ```bash
+# Клонировать
+git clone https://github.com/glebgubiev10-del/traveldream.git
+cd traveldream
+
+# Создать .env файл
+cp .env.example .env
+
 # Установить зависимости
 npm install
 
@@ -35,14 +42,19 @@ npx prisma db push
 npm run dev
 ```
 
-Открыть [http://localhost:3000](http://localhost:3000)
+Открыть http://localhost:3000
 
 ## Деплой на Vercel
 
-1. Форкните этот репозиторий
-2. Импортируйте проект на [vercel.com](https://vercel.com)
-3. Добавьте переменную окружения: `DATABASE_URL=file:./dev.db`
+1. Импортируйте проект на [vercel.com](https://vercel.com/new)
+2. Framework: Next.js (автоопределение)
+3. Добавьте переменную окружения: `DATABASE_URL` = `file:./dev.db`
 4. Деплой!
+
+## ⚠️ Важно
+
+- **НЕ запускайте** `npm audit fix --force` — это даунгрейдит Next.js с v16 до v9!
+- Все версии зависимостей зафиксированы в package.json для совместимости
 
 ## Лицензия
 
